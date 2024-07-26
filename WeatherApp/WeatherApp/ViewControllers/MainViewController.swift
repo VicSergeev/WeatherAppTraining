@@ -129,18 +129,21 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         let sections = TableViewSection(rawValue: indexPath.section)!
         
         switch sections {
+            // MARK: - head cell
         case .top:
             let topCell = tableView.dequeueReusableCell(withIdentifier: Cells.topCell, for: indexPath) as! CurrentConditionTableViewCell
             topCell.backgroundColor = .clear
             return topCell
+            // MARK: - climate conditions cells(coolectionView)
         case .lowerTop:
             let lowerTopCell = tableView.dequeueReusableCell(withIdentifier: Cells.lowerTopCell, for: indexPath) as! TotalConditionsTableViewCell
-            lowerTopCell.backgroundColor = .red
             return lowerTopCell
+            // MARK: - every hour cells
         case .mid:
             let cell = UITableViewCell()
             cell.backgroundColor = .cyan
             return cell
+            // MARK: - weekly forecast
         case .list:
             let listCell = tableView.dequeueReusableCell(withIdentifier: Cells.listItemCell, for: indexPath) as! ListItemCell
             return listCell

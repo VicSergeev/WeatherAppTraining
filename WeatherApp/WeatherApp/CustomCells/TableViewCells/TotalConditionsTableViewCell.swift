@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-// MARK: - tableViewCell for collectionView
+// MARK: - tableViewCell for collectionView with page control
 final class TotalConditionsTableViewCell: BaseTableViewCell {
     
     lazy private var collectionsStackView: UIStackView = {
@@ -49,12 +49,10 @@ final class TotalConditionsTableViewCell: BaseTableViewCell {
         collectionsStackView.snp.makeConstraints { make in
 //            make.top.equalToSuperview().offset(15)
             make.leading.trailing.equalToSuperview()
-            make.height.equalTo(140)
         }
         
         collectionView.snp.makeConstraints({
-            $0.height.equalTo(120)
-            $0.width.equalTo(120)
+            $0.height.equalTo(100)
         })
         
     }
@@ -92,7 +90,7 @@ extension TotalConditionsTableViewCell: UICollectionViewDataSource {
         
         switch focusGroup {
         case .conditionsInfo:
-            return CollectionViewSections(rawValue: section) == .sunriseSection ? 1 : 3
+            return CollectionViewSections(rawValue: section) == .sunriseSection ? 1 : 19
         }
     }
     
@@ -121,31 +119,19 @@ extension TotalConditionsTableViewCell: UICollectionViewDataSource {
 extension TotalConditionsTableViewCell: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        guard let focusGroup = CollectionViewFocusGroup(rawValue: collectionView.focusGroupIdentifier ?? "") else { fatalError("Invalid section") }
-        
-        switch focusGroup {
-        case .conditionsInfo:
-            return CGSize.init(width: 120, height: 120)
-        }
+        return CollectionViewFocusGroup(rawValue: collectionView.focusGroupIdentifier ?? "") == .conditionsInfo ? CGSize.init(width: 80, height: 200) :  CGSize.init(width: contentView.frame.width, height: 90)
     }
     
     // vertical spacing
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 5
+        return 1
     }
     // horizontal spacing
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 5
+        return 0
     }
     // spacing between sections
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        guard let focusGroup = CollectionViewFocusGroup(rawValue: collectionView.focusGroupIdentifier ?? "") else { fatalError("Invalid section") }
-        
-        switch focusGroup {
-        case .conditionsInfo:
-            return UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 5)
-        }
-//        return CollectionViewFocusGroup(rawValue: collectionView.focusGroupIdentifier ?? "") == .conditionsInfo ? UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0) :  UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        return CollectionViewFocusGroup(rawValue: collectionView.focusGroupIdentifier ?? "") == .conditionsInfo ? UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 3) :  UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
 }

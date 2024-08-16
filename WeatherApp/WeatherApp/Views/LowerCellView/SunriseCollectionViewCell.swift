@@ -11,6 +11,7 @@ import SnapKit
 final class SunriseCollectionViewCell: BaseCollectionViewCell {
     static let identifier = "SunriseCollectionViewCell"
     
+    // connect xib from class to this cell
     lazy private var sunriseConditionView: SunriseView = {
         SunriseView.instanceFromNib()
     }()

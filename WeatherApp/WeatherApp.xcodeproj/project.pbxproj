@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57156B492C6F93A900F8130D /* WeatherParameterSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57156B482C6F93A900F8130D /* WeatherParameterSectionView.swift */; };
+		57156B4B2C6F93BD00F8130D /* WeatherParameterSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57156B4A2C6F93BD00F8130D /* WeatherParameterSectionView.xib */; };
 		5723BC5E2C51711E00A350ED /* CurrentConditionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5723BC5D2C51711E00A350ED /* CurrentConditionView.xib */; };
 		5723BC602C5171D100A350ED /* CurrentConditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5723BC5F2C5171D100A350ED /* CurrentConditionView.swift */; };
 		5723BC662C52464500A350ED /* TotalConditionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5723BC652C52464500A350ED /* TotalConditionsTableViewCell.swift */; };
@@ -30,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		57156B482C6F93A900F8130D /* WeatherParameterSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherParameterSectionView.swift; sourceTree = "<group>"; };
+		57156B4A2C6F93BD00F8130D /* WeatherParameterSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherParameterSectionView.xib; sourceTree = "<group>"; };
 		5723BC5D2C51711E00A350ED /* CurrentConditionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentConditionView.xib; sourceTree = "<group>"; };
 		5723BC5F2C5171D100A350ED /* CurrentConditionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentConditionView.swift; sourceTree = "<group>"; };
 		5723BC652C52464500A350ED /* TotalConditionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalConditionsTableViewCell.swift; sourceTree = "<group>"; };
@@ -79,6 +83,8 @@
 				5723BC742C52C84400A350ED /* SunriseView.xib */,
 				5723BC762C52C8BF00A350ED /* SunriseView.swift */,
 				5723BC782C52C8DC00A350ED /* SunriseCollectionViewCell.swift */,
+				57156B482C6F93A900F8130D /* WeatherParameterSectionView.swift */,
+				57156B4A2C6F93BD00F8130D /* WeatherParameterSectionView.xib */,
 			);
 			path = LowerCellView;
 			sourceTree = "<group>";
@@ -269,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5723BC752C52C84400A350ED /* SunriseView.xib in Resources */,
+				57156B4B2C6F93BD00F8130D /* WeatherParameterSectionView.xib in Resources */,
 				5723BC5E2C51711E00A350ED /* CurrentConditionView.xib in Resources */,
 				57F081FB2C46A3FA001967F3 /* Assets.xcassets in Resources */,
 				57F081FE2C46A3FA001967F3 /* Base in Resources */,
@@ -289,6 +296,7 @@
 				5723BC792C52C8DC00A350ED /* SunriseCollectionViewCell.swift in Sources */,
 				5723BC662C52464500A350ED /* TotalConditionsTableViewCell.swift in Sources */,
 				577112C22C46D4BC00A010C5 /* UIView + Ext.swift in Sources */,
+				57156B492C6F93A900F8130D /* WeatherParameterSectionView.swift in Sources */,
 				5723BC602C5171D100A350ED /* CurrentConditionView.swift in Sources */,
 				5723BC7E2C53DA4000A350ED /* BaseCollectionViewCell.swift in Sources */,
 				577112D22C4EF09200A010C5 /* CurrentConditionTableViewCell.swift in Sources */,

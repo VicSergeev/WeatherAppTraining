@@ -14,7 +14,7 @@ final class TotalConditionsTableViewCell: BaseTableViewCell {
     lazy private var collectionsStackView: UIStackView = {
         var stackView = UIStackView()
         stackView.axis = .vertical
-        stackView.spacing = 5
+        stackView.spacing = 1
         //stackView.alignment = .center
         stackView.distribution = .fillEqually
         return stackView
@@ -24,8 +24,8 @@ final class TotalConditionsTableViewCell: BaseTableViewCell {
         // layout
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.minimumLineSpacing = 0
-        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 1
+        layout.minimumInteritemSpacing = 1
         
         // collection
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -53,7 +53,7 @@ final class TotalConditionsTableViewCell: BaseTableViewCell {
         }
         
         collectionView.snp.makeConstraints({
-            $0.height.equalTo(100)
+            $0.height.equalTo(140)
         })
         
     }
@@ -91,7 +91,8 @@ extension TotalConditionsTableViewCell: UICollectionViewDataSource {
         
         switch focusGroup {
         case .conditionsInfo:
-            return CollectionViewSections(rawValue: section) == .sunriseSection ? 1 : 19
+            // MARK: - here ternary because only two sections in collection
+            return CollectionViewSections(rawValue: section) == .sunriseSection ? 1 : 9
         }
     }
     
@@ -120,7 +121,7 @@ extension TotalConditionsTableViewCell: UICollectionViewDataSource {
 extension TotalConditionsTableViewCell: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CollectionViewFocusGroup(rawValue: collectionView.focusGroupIdentifier ?? "") == .conditionsInfo ? CGSize.init(width: 180, height: 180) :  CGSize.init(width: contentView.frame.width, height: 90)
+        return CollectionViewFocusGroup(rawValue: collectionView.focusGroupIdentifier ?? "") == .conditionsInfo ? CGSize.init(width: 140, height: 140) :  CGSize.init(width: contentView.frame.width, height: 140)
     }
     
     // vertical spacing

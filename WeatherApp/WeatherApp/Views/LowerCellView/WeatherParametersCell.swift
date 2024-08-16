@@ -34,7 +34,7 @@ final class WeatherParametersCell: BaseCollectionViewCell {
         
         stackView.snp.makeConstraints({ make in
             make.leading.trailing.centerY.equalToSuperview()
-            make.height.equalTo(120)
+            make.height.equalTo(180)
         })
     }
 }

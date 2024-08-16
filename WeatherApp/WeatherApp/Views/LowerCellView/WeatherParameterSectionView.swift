@@ -7,6 +7,8 @@
 
 import UIKit
 
-final class WeatherParameterSectionView: UIView {
-    var a = 3
+final class WeatherParameterSectionView: UIView, InstanceFromNibProtocol {
+    typealias InstanceFromNibType = WeatherParameterSectionView
+    
+    @IBOutlet weak var topLabel: UILabel!
 }

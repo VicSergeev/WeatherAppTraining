@@ -43,6 +43,7 @@ final class TotalConditionsTableViewCell: BaseTableViewCell {
         
         // MARK: - collectionView register cell
         collectionView.register(SunriseCollectionViewCell.self, forCellWithReuseIdentifier: "SunriseCollectionViewCell")
+        collectionView.register(WeatherParametersCell.self, forCellWithReuseIdentifier: "WeatherParametersCell")
         
         // MARK: - snapkit
         
@@ -108,7 +109,7 @@ extension TotalConditionsTableViewCell: UICollectionViewDataSource {
                 return sunriseCell
                 
             case .weatherParametersSection:
-                guard let weatherCell = collectionView.dequeueReusableCell(withReuseIdentifier: SunriseCollectionViewCell.identifier, for: indexPath) as? SunriseCollectionViewCell else { fatalError("falied to dequeue CurrentConditionsCollectionViewCell") }
+                guard let weatherCell = collectionView.dequeueReusableCell(withReuseIdentifier: WeatherParametersCell.identifier, for: indexPath) as? WeatherParametersCell else { fatalError("falied to dequeue CurrentConditionsCollectionViewCell") }
                 
                 return weatherCell
             }
@@ -119,7 +120,7 @@ extension TotalConditionsTableViewCell: UICollectionViewDataSource {
 extension TotalConditionsTableViewCell: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CollectionViewFocusGroup(rawValue: collectionView.focusGroupIdentifier ?? "") == .conditionsInfo ? CGSize.init(width: 80, height: 200) :  CGSize.init(width: contentView.frame.width, height: 90)
+        return CollectionViewFocusGroup(rawValue: collectionView.focusGroupIdentifier ?? "") == .conditionsInfo ? CGSize.init(width: 180, height: 180) :  CGSize.init(width: contentView.frame.width, height: 90)
     }
     
     // vertical spacing
@@ -128,10 +129,10 @@ extension TotalConditionsTableViewCell: UICollectionViewDelegate, UICollectionVi
     }
     // horizontal spacing
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+        return 5
     }
     // spacing between sections
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return CollectionViewFocusGroup(rawValue: collectionView.focusGroupIdentifier ?? "") == .conditionsInfo ? UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 3) :  UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        return CollectionViewFocusGroup(rawValue: collectionView.focusGroupIdentifier ?? "") == .conditionsInfo ? UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10) :  UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
 }

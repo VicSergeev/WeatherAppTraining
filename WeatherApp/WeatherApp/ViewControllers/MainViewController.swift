@@ -21,6 +21,7 @@ final class MainViewController: UIViewController {
         super.viewDidLoad()
         tableViewConfig()
         view.backgroundColor = .red
+        title = "weather"
     }
 }
 
@@ -43,9 +44,6 @@ private extension MainViewController {
         tableView.rowHeight = 120
         tableView.pin(to: view)
         tableView.contentInset = UIEdgeInsets.zero
-
-        
-        navigationController?.navigationBar.isHidden = true
     }
     
     func setTableViewDelegates() {
@@ -124,10 +122,13 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     // MARK: - Delegate
-    
+    // это метод, который вызывается системой, когда требуется отобразить ячейку
+    // для конкретной строки таблицы
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let sections = TableViewSection(rawValue: indexPath.section)!
+        guard let sections = TableViewSection(rawValue: indexPath.section) else {
+            return UITableViewCell()
+        }
         
         switch sections {
         case .top:

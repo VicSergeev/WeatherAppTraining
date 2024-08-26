@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         window.makeKeyAndVisible()
         let navController = UINavigationController(rootViewController: MainViewController())
-        navController.setNavigationBarHidden(true, animated: false) // if navbar need to be hidden
+        navController.setNavigationBarHidden(false, animated: true) // if navbar need to be hidden
 //        navController.navigationBar.prefersLargeTitles = true
         window.rootViewController = navController
         self.window = window

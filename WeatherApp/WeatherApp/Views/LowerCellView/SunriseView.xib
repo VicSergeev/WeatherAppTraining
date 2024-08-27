@@ -33,7 +33,7 @@
                 </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" systemColor="systemGreenColor"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="SWm-Mt-Oih" secondAttribute="bottom" id="EpI-zg-ttv"/>
                 <constraint firstItem="SWm-Mt-Oih" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Im0-fX-J9T"/>
@@ -49,8 +49,8 @@
     </objects>
     <resources>
         <image name="sunrise" width="512" height="512"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

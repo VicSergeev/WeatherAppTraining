@@ -143,7 +143,6 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         case .lowerTop:
             // MARK: - CollectionView Cells
             let lowerTopCell = tableView.dequeueReusableCell(withIdentifier: Cells.lowerTopCell, for: indexPath) as! TotalConditionsTableViewCell
-            lowerTopCell.backgroundColor = .red
             return lowerTopCell
         case .mid:
             let cell = UITableViewCell()

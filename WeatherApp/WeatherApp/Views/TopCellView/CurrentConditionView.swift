@@ -13,6 +13,5 @@ final class CurrentConditionView: UIView, InstanceFromNibProtocol {
     @IBOutlet weak var currentConditionIconImage: UIImageView!
     @IBOutlet weak var currentTempLabel: UILabel!
     
-    
 }
 

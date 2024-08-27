@@ -11,6 +11,12 @@ final class MainViewController: UIViewController {
     
     var tableView = UITableView()
     
+//    lazy var bgImage: UIImageView = {
+//        let image = UIImageView(image: UIImage(resource: .bg))
+//        image.alpha = 0.5
+//        return image
+//    }()
+    
     struct Cells {
         static let listItemCell = "ListItemTableViewCell"
         static let topCell = "CurrentConditionTableViewCell"
@@ -21,7 +27,6 @@ final class MainViewController: UIViewController {
         super.viewDidLoad()
         tableViewConfig()
         view.backgroundColor = .red
-        title = "weather"
     }
 }
 
@@ -33,7 +38,7 @@ private extension MainViewController {
         
         view.addSubview(tableView)
         setTableViewDelegates()
-        
+//        view.addSubview(bgImage)
         tableView.register(ListItemCell.self, forCellReuseIdentifier: Cells.listItemCell)
         tableView.register(CurrentConditionTableViewCell.self, forCellReuseIdentifier: Cells.topCell)
         tableView.register(TotalConditionsTableViewCell.self, forCellReuseIdentifier: Cells.lowerTopCell)

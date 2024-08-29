@@ -32,6 +32,7 @@ final class TotalConditionsTableViewCell: BaseTableViewCell {
         contentView.addSubview(collectionsStackView)
         collectionsStackView.addArrangedSubview(sunriseConditionView)
         collectionsStackView.addArrangedSubview(weather)
+        weather.backgroundColor = .blue
         
         // MARK: - snapkit
         
